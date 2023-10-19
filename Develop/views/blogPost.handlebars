@@ -1,9 +1,0 @@
-<section class="container">
-  <h3 class="blogPost-details">{{blogPost.title}}</h3>
-  <h4>Reply Below: {{Comments}}</h4>
-  <section class="flex-row justify-center">
-    {{#each blogPost.comments as |Comments|}}
-    {{> blogPost-details}}
-    {{/each}}
-  </section>
-</section>
