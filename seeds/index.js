@@ -4,8 +4,11 @@ const seedComments = require('./Comments')
 
 const seedAll = async () => {
   await sequelize.sync({ force : true});
+  
   await seedBlogPost();
+  
   await seedComments();
+  
   process.exit(0);
 };
 

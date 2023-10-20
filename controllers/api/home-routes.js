@@ -6,7 +6,7 @@ const withAuth = require('../../utils/auth');
 // GET all posts for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbblogPostData = await blogPost.findAll({
+    const blogPostData = await blogPost.findAll({
       include: [
         {
           model: Comments,
@@ -15,12 +15,13 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    const blogPost = dbblogPostData.map((blogPost) =>
+
+    const blogPosts = blogPostData.map((blogPost) =>
       blogPost.get({ plain: true })
     );
 
     res.render('homepage', {
-      Comments,
+      blogPosts,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -33,10 +34,10 @@ router.get('/', async (req, res) => {
 // Use the custom middleware before allowing the user to access the gallery
 router.get('/blogPost/:category', withAuth, async (req, res) => {
   try {
-    const dbblogPostData = await blogPost.findByPk(req.params.id, {
+    const blogPostData = await blogPost.findByPk(req.params.id, {
       include: [
         {
-          model: blogPost,
+          model: Comments,
           attributes: [
             'category',
             'name',
@@ -48,8 +49,8 @@ router.get('/blogPost/:category', withAuth, async (req, res) => {
       ],
     });
 
-    const Comments = dbCommentsData.get({ plain: true });
-    res.render('comments', { Comments, loggedIn: req.session.loggedIn });
+    const blogPost = blogPostData.get({ plain: true });
+    res.render('blogPost', { blogPost, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -62,7 +63,7 @@ router.get('/comment/:title', withAuth, async (req, res) => {
   try {
     const dbCommentsData = await Comments.findByPk(req.params.id);
 
-    const blogPost = dbblogPostData.get({ plain: true });
+    const Comments = dbCommentsData.get({ plain: true });
 
     res.render('comments', { Comments, loggedIn: req.session.loggedIn });
   } catch (err) {
