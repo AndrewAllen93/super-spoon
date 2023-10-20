@@ -10,7 +10,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Comments,
-          attributes: ['userID', 'description'],
+          attributes: ['title', 'description'],
         },
       ],
     });
@@ -49,8 +49,8 @@ router.get('/blogPost/:category', withAuth, async (req, res) => {
       ],
     });
 
-    const blogPost = blogPostData.get({ plain: true });
-    res.render('blogPost', { blogPost, loggedIn: req.session.loggedIn });
+    const blogPosts = blogPostData.get({ plain: true });
+    res.render('blogPost', { blogPosts, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -63,9 +63,9 @@ router.get('/comment/:title', withAuth, async (req, res) => {
   try {
     const dbCommentsData = await Comments.findByPk(req.params.id);
 
-    const Comments = dbCommentsData.get({ plain: true });
+    const Comment = dbCommentsData.get({ plain: true });
 
-    res.render('comments', { Comments, loggedIn: req.session.loggedIn });
+    res.render('comments', { Comment, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
