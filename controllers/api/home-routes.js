@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { blogPost, Comments } = require('../models/Comments');
+const { blogPost, Comments } = require('../../models');
 // Import the custom middleware
-const withAuth = require('../utils/auth');
+const withAuth = require('../../utils/auth');
 
 // GET all posts for homepage
 router.get('/', async (req, res) => {
