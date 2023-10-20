@@ -16,7 +16,7 @@ Comments.init(
       allowNull: false,
     },
     title:{
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     date: {
@@ -24,7 +24,7 @@ Comments.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
   },
