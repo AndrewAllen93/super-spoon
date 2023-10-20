@@ -2,16 +2,40 @@ const { blogPost } = require('../models');
 
 const blogPostdata = [
   {
-    "title": "Post 1",
-    "content": "Content for Post 1",
-    "UserId": 1, // Associate this post with a user
-    "ForumTopicId": 1 // Associate this post with a topic
+    "title": "Science",
+    "content": "How many planets are there?",
+    "UserId": '21', // Associate this post with a user
+    "ForumTopicId": 'Science', // Associate this post with a topic
   },
   {
-    "title": "Post 2",
-    "content": "Content for Post 2",
-    "UserId": 2, // Associate this post with a user
-    "ForumTopicId": 1 // Associate this post with a topic
+    "title": "Daylight Savings",
+    "content": "Does anyone know the science behind daylight savings?",
+    "UserId": '2', // Associate this post with a user
+    "ForumTopicId": 'General', // Associate this post with a topic
+  },
+  {
+    "title": "Daylight Savings",
+    "content": "Does anyone know the science behind daylight savings?",
+    "UserId": '2', // Associate this post with a user
+    "ForumTopicId": 'General', // Associate this post with a topic
+  },
+  {
+    "title": "Daylight Savings",
+    "content": "Does anyone know the science behind daylight savings?",
+    "UserId": '2', // Associate this post with a user
+    "ForumTopicId": 'General', // Associate this post with a topic
+  },
+  {
+    "title": "Daylight Savings",
+    "content": "Does anyone know the science behind daylight savings?",
+    "UserId": '2', // Associate this post with a user
+    "ForumTopicId": 'General', // Associate this post with a topic
+  },
+  {
+    "title": "Daylight Savings",
+    "content": "Does anyone know the science behind daylight savings?",
+    "UserId": '2', // Associate this post with a user
+    "ForumTopicId": 'General', // Associate this post with a topic
   }
 ];
 
