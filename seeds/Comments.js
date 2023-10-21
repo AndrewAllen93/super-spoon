@@ -1,5 +1,5 @@
 const {Comments} = require('../models');
-const commentData = [
+const dbCommentsData = [
   {
     "category": "General",
     "name": 'Jack',
@@ -48,6 +48,6 @@ const commentData = [
 ]
 
 
-const seedComments = () => Comments.bulkCreate(commentData);
+const seedComments = () => Comments.bulkCreate(dbCommentsData);
 
 module.exports = seedComments;
