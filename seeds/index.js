@@ -1,14 +1,14 @@
-const sequelize = require('../config/connection'); // Import your Sequelize configuration
-const seedBlogPost = require('./blogData')
-const seedComments = require('./Comments')
+const sequelize = require('../config/connection');
+const seedblogPost = require('./blogData');
+const seedComments = require('./Comments');
 
 const seedAll = async () => {
-  await sequelize.sync({ force : true});
-  
-  await seedBlogPost();
-  
+  await sequelize.sync({ force: true });
+
   await seedComments();
-  
+
+  await seedblogPost();
+
   process.exit(0);
 };
 
