@@ -8,8 +8,8 @@ Comments.init(
     category: {
       type: DataTypes.STRING,
       allowNull: false,
-      primaryKey: true,
-      autoIncrement: true,
+     // primaryKey: true,
+      //autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING,
@@ -27,13 +27,13 @@ Comments.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    blogPost_category: {
-      type: DataTypes.STRING,
-    references: {
-      model: 'blogPost',
-      key: 'category',
-      },
-    },
+   // blogPost_category: {
+     // type: DataTypes.STRING,
+   // references: {
+     // model: 'blogPost',
+     // key: 'category',
+    //  },
+   // },
   },
   {
     sequelize,

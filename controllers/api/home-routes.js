@@ -4,17 +4,17 @@ const { blogPost, Comments } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // GET all posts for homepage
+
 router.get('/', async (req, res) => {
   try {
     const blogPostData = await blogPost.findAll({
       include: [
         {
           model: Comments,
-          attributes: ['category', 'description'],
+          attributes: ['category', 'name'],
         },
       ],
     });
-
 
     const blogPosts = blogPostData.map((blogPost) =>
       blogPost.get({ plain: true })
@@ -32,9 +32,10 @@ router.get('/', async (req, res) => {
 
 // GET one blogpost
 // Use the custom middleware before allowing the user to access the gallery
-router.get('/blogPost/:category', withAuth, async (req, res) => {
+
+router.get('/blogPost/:name', withAuth, async (req, res) => {
   try {
-    const blogPostData = await blogPost.findByPk(req.params.category, {
+    const blogPostData = await blogPost.findByPk(req.params.id, {
       include: [
         {
           model: Comments,
@@ -49,19 +50,21 @@ router.get('/blogPost/:category', withAuth, async (req, res) => {
       ],
     });
 
-    const blogPost = blogPostData.get({ plain: true });
-    res.render('blogPost', { blogPost, loggedIn: req.session.loggedIn });
+    const blogPosts = blogPostData.get({ plain: true });
+    res.render('blogPost', { blogPosts, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
+
+
 // GET one comment
 // Use the custom middleware before allowing the user to access the painting
 router.get('/comment/:category', withAuth, async (req, res) => {
   try {
-    const dbCommentsData = await Comments.findByPk(req.params.category);
+    const dbCommentsData = await Comments.findByPk(req.params.id);
 
     const Comment = dbCommentsData.get({ plain: true });
 
