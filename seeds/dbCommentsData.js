@@ -41,7 +41,7 @@ const dbCommentsData = [
     "category": "Advice",
     "name":"Sarah",
     "title": "Topic 2",
-    "date": "",
+    "date": "07/21/2019",
     "description": "Description for Topic 2",
 
   }
