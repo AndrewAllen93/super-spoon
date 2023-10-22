@@ -118,7 +118,7 @@ h3 {
   color: #fff; /* Text color */
 }
 
-.blogPost-details {
+.blogPost-category {
   font-size: 24px;
   font-weight: bold;
   margin: 10px 0;
@@ -138,10 +138,74 @@ h4 {
 }
 
 /* Style individual comments within the .flex-row section */
-.blogPost-details {
+.blogPost-description {
   background-color: #333; /* Change the background color to match the container */
   border: 1px solid #ccc;
   padding: 10px;
   margin: 10px;
-  color: #fff; /* Text color */
+  color: #fff;  /* Text color */
+}
+
+
+.card {
+  margin: 20px;
+  flex: 0 1 300px;
+  border: 7px double var(--dark);
+  border-radius: 10px;
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+.blogPosts {
+  flex: 4;
+  background-color: #b2abab;
+  padding: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.comments {
+  width: 50%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+}
+.card-body {
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.login-card {
+  margin: 0 0 20px 0;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 5px;
+  border: 3px solid var(--dark);
+  border-radius: var(--border-radius);
+  border-style: double;
+  border-width: thick;
+  background-color: #d5e1e1;
+  color: var(--light);
+}
+
+aside {
+  flex: 0;
+  background-color: var(--tertiary);
+  padding: 80px;
+  text-align: left;
+  color: var(--light);
+}
+
+.comments-category {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 5px var(--secondary);
+  border: 10px groove var(--light);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 100px;
+  padding-left: 100px;
 }

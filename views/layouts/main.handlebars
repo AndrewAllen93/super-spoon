@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,7 +12,7 @@
       <h1>Problogger</h1>
       <h2>Blog + Commenting Platform</h2>
     </header>
-    <nav class="nav">
+    <nav class = 'nav'>
       <a href="/">Home</a>
       {{#if loggedIn}}
         <a href="/conversation">Conversation</a>
@@ -20,13 +21,18 @@
         <a href="/login">Login</a>
       {{/if}}
     </nav>
-    <h3>Join the Conversation</h3>
-    {{{body}}}
-    <main>
-      {{#if loggedIn}}
-        <script src="/js/logout.js"></script>
-      {{/if}}
-      </section>
     </main>
+     <aside>
+       <h3>Join the Conversation</h3>
+    </aside>
+    <div class="blogPosts">
+      {{{body}}}
+      {{{blogPost-category}}}
+    </div>
+  <main>
+      {{#if loggedIn}}
+        <script src="/logout"></script>
+      {{/if}}
   </body>
+
 </html>

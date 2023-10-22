@@ -6,17 +6,17 @@ class Comments extends Model {}
 Comments.init(
   {
     category: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
     name: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     title:{
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     date: {
@@ -24,8 +24,15 @@ Comments.init(
       allowNull: false,
     },
     description: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
+    },
+    blogPost_category: {
+      type: DataTypes.STRING,
+    references: {
+      model: 'blogPost',
+      key: 'category',
+      },
     },
   },
   {

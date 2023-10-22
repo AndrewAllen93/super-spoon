@@ -1,6 +1,6 @@
 const { blogPost } = require('../models');
 
-const blogData = [
+const blogPostData = [
   {
     "title": "Science",
     "description": "How many planets are there?",
@@ -39,6 +39,6 @@ const blogData = [
   }
 ];
 
-const seedblogPost = () => blogPost.bulkCreate(blogData);
+const seedblogPost = () => blogPost.bulkCreate(blogPostData);
 
 module.exports = seedblogPost;
