@@ -184,3 +184,13 @@ h3 {
   padding-right: 100px;
   padding-left: 100px;
 }
+
+.blogPost {
+  flex: 4;
+  background-color: #000000;
+  padding: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}

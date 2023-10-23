@@ -27,13 +27,13 @@ Comments.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-   // blogPost_category: {
-     // type: DataTypes.STRING,
-   // references: {
-     // model: 'blogPost',
-     // key: 'category',
-    //  },
-   // },
+   blogPost_category: {
+      type: DataTypes.STRING,
+   references: {
+      model: 'blogPost',
+      key: 'category',
+      },
+    },
   },
   {
     sequelize,
