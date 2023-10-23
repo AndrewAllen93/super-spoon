@@ -21,16 +21,14 @@
         <button id="logout" class="btn-no-style">Logout</button>
       {{else}}
         <a href="/login">Login</a>
-        <a href="/conversation">Conversation</a>
-
         {{/if}}
+      {{#if loggedIn}}
+           <a href="/">Conversation</a></h3>
+              {{/if}}
       </nav>
     </div>
   </header>
   <main>
-    <aside>
-      <h3>Join the <a href="/conversation">Conversation</a></h3>
-    </aside>
     <div class="blogPosts">
       {{{body}}}
     </div>
