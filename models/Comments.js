@@ -4,18 +4,18 @@ const sequelize = require('../config/connection');
 class Comments extends Model {}
 
 Comments.init(
-  {
-    // userId: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //  primaryKey: true,
-    //   autoIncrement: true,
-    // },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    title:{
+    {
+    category: {
+        type: DataTypes.STRING,
+        allowNull: false,
+      },
+    id: {
+       type: DataTypes.INTEGER,
+       allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+     },
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -27,12 +27,12 @@ Comments.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-   blogPost_category: {
+   blogPost_id: {
       type: DataTypes.STRING,
-   references: {
-      model: 'blogPost',
-      key: 'category',
-      },
+      references: {
+      model: 'blogpost',
+      key: 'id',
+     },
     },
   },
   {

@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Comments,
-          attributes: ['category', 'name'],
+          attributes: ['id'],
         },
       ],
     });
@@ -23,7 +23,7 @@ router.get('/', async (req, res) => {
     res.render('homepage', {
       blogPosts,
       loggedIn: req.session.loggedIn,
-    });
+    });  
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -33,15 +33,14 @@ router.get('/', async (req, res) => {
 // GET one blogpost
 // Use the custom middleware before allowing the user to access the gallery
 
-router.get('/blogPost/:name', withAuth, async (req, res) => {
+router.get('/blogPost/:id', withAuth, async (req, res) => {
   try {
     const blogPostData = await blogPost.findByPk(req.params.id, {
       include: [
         {
           model: Comments,
           attributes: [
-            'category',
-            'name',
+            'id',
             'title',
             'date',
             'description',
@@ -62,7 +61,7 @@ router.get('/blogPost/:name', withAuth, async (req, res) => {
 
 // GET one comment
 // Use the custom middleware before allowing the user to access the painting
-router.get('/comment/:category', withAuth, async (req, res) => {
+router.get('/comment/', withAuth, async (req, res) => {
   try {
     const dbCommentsData = await Comments.findByPk(req.params.id);
 
