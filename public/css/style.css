@@ -20,6 +20,11 @@ header {
   width: 100%;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 h1 {
   background-image: linear-gradient(to right,#d4d4d4,#383838); 
   font-size: 90px;

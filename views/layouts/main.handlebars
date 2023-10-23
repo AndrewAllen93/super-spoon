@@ -23,7 +23,7 @@
         <a href="/login">Login</a>
         {{/if}}
       {{#if loggedIn}}
-           <a href="/">Conversation</a></h3>
+          <a href="/conversations.js">Conversations</a>
               {{/if}}
       </nav>
     </div>
@@ -33,9 +33,11 @@
       {{{body}}}
     </div>
   <main>
+    <main>
       {{#if loggedIn}}
         <script src="/js/logout.js"></script>
       {{/if}}
+      </main>
   </body>
 
 </html>
