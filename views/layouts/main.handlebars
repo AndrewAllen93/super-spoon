@@ -12,16 +12,18 @@
 <body>
   <header class="container-header">
     <h1>Problogger</h1>
-    <h2>Blog + Commenting Platform</h2>
+    <div class="container-nav">
+      <h2>Blog + Commenting Platform</h2>
+      <nav class='nav'>
+        <a href="/">Home</a>
+        {{#if loggedIn}}
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+      </nav>
+    </div>
   </header>
-  <nav class='nav'>
-    <a href="/">Home</a>
-    {{#if loggedIn}}
-    <button id="logout" class="btn-no-style">Logout</button>
-    {{else}}
-    <a href="/login">Login</a>
-    {{/if}}
-  </nav>
   <main>
     <aside>
       <h3>Join the <a href="/conversation">Conversation</a></h3>
