@@ -8,8 +8,8 @@ Comments.init(
     category: {
       type: DataTypes.STRING,
       allowNull: false,
-     // primaryKey: true,
-      //autoIncrement: true,
+     primaryKey: true,
+      autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING,
