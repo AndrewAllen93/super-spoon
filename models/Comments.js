@@ -1,31 +1,20 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Comments extends Model {}
 
 Comments.init(
-<<<<<<< HEAD
   {
-    category: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-=======
-    {
->>>>>>> 34012f9aca802c0cbcf01bc65684f0e3a7dc475a
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-<<<<<<< HEAD
-=======
     category: {
       type: DataTypes.STRING,
       allowNull: false,
     },
->>>>>>> 34012f9aca802c0cbcf01bc65684f0e3a7dc475a
     title: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -38,16 +27,12 @@ Comments.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-<<<<<<< HEAD
-    blogPost_id: {
-      type: DataTypes.INTEGER, // Change data type to INTEGER
-=======
-   blogpost_id: {
+    blogpost_id: {
       type: DataTypes.INTEGER,
->>>>>>> 34012f9aca802c0cbcf01bc65684f0e3a7dc475a
+      allowNull: false, // Add allowNull for the foreign key
       references: {
-        model: 'blogpost',
-        key: 'id',
+        model: "blogpost", // Ensure this matches the actual model name
+        key: "id",
       },
     },
   },
@@ -55,7 +40,7 @@ Comments.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comments',
+    modelName: "comments",
   }
 );
 
