@@ -14,27 +14,39 @@
     <h1>Problogger</h1>
     <div class="container-nav">
       <h2>Blog + Commenting Platform</h2>
-    </header>
-    <nav class = 'nav'>
-      <a href="/">Home</a>
-      {{#if loggedIn}}
+      <nav class='nav'>
+        <a href="/">Home</a>
+        {{#if loggedIn}}
         <button id="logout" class="btn-no-style">Logout</button>
-      {{else}}
+        {{else}}
         <a href="/login">Login</a>
-        {{/if}}                                
-      {{#if loggedIn}}
-          <a href="/">Conversations</a>
-              {{/if}}
+        {{/if}}
+        {{!-- {{#if loggedIn}}
+        <a href="/">Conversations</a>
+        {{/if}} --}}
       </nav>
     </div>
-  <main>
+  </header>
+
+  <main class="container">
+    {{#if loggedIn}}
+    <div class="create-form">
+      <form action="/create-blog-post" method="POST">
+        <input type="text" name="category" placeholder="Topic" required>
+        <input type="text" name="title" placeholder="Title" required>
+        <textarea name="description" placeholder="Description" required class="large-textarea"></textarea>
+        <button type="submit">Create Blog Post</button>
+      </form>
+    </div>
+    {{/if}}
+
     <div class="blogPosts">
       {{{body}}}
     </div>
-    <main>
-      {{#if loggedIn}}
-        <script src="/js/logout.js"></script>
-      {{/if}}
-  </body>
+  </main>
+  {{#if loggedIn}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
+</body>
 
 </html>

@@ -1,10 +1,11 @@
+{{#if loggedIn}}
 <section class="container">
   <h3 class="blogPost-details">{{blogPost.title}}</h3>
-  <h4>Reply Below: {{Comments}}</h4>
-  {{#if loggedIn}}
-  <section class="flex-row justify-center">
-    {{#each blogPost as |blogPost|}}
-    {{> blogPost-category}}
-    {{/each}}
-  </section>
+  <h4>Reply Below: {{comments}}</h4>
+
+  {{!-- <section class="flex-row justify-center"> --}}
+    {{!-- {{#each blogPost as |blogPost|}}
+    {{> blogPost-details}}
+    {{/each}} --}}
+  {{!-- </section> --}}
 </section>
