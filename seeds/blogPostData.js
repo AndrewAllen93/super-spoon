@@ -14,28 +14,28 @@ const blogpostdata = [
     category: 'General', // Associate this post with a topic
   },
   {
-    title: 'Daylight Savings',
-    description: 'Does anyone know the science behind daylight savings?',
+    title: 'Fitness and Wellness',
+    description: 'I am 150 lbs, and 5 feet tall. Why am I not losing weight while working out 5x a week?',
     id: 3, // Associate this post with a user
     category: 'Health and Lifestyle', // Associate this post with a topic
   },
   {
-    title: 'Daylight Savings',
-    description: 'Does anyone know the science behind daylight savings?',
+    title: 'Relationsips',
+    description: 'What are immediate red flags when pursuing a relationship?',
     id: 4, // Associate this post with a user
     category: 'Advice', // Associate this post with a topic
   },
   {
-    title: 'Daylight Savings',
-    description: 'Does anyone know the science behind daylight savings?',
+    title: 'Food Recalls',
+    description: 'Have there been any major food recalls lately?',
     id: 5, // Associate this post with a user
-    category: 'General', // Associate this post with a topic
+    category: 'Food', // Associate this post with a topic
   },
   {
-    title: 'Daylight Savings',
-    description: 'Does anyone know the science behind daylight savings?',
+    title: 'Current Events',
+    description: 'What major events have been happening in America this week?',
     id: 6, // Associate this post with a user
-    category: 'General', // Associate this post with a topic
+    category: 'News', // Associate this post with a topic
   }
 ];
 

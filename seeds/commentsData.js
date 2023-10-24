@@ -1,48 +1,49 @@
 const {Comments} = require('../models');
 const commentsdata = [
+
   {
     category: 'General',
     blogpost_id: 1,
-    title: 'Daylight Savings',
-    date: '10/20/2021',
-    description: 'Does anyone know the science behind daylight savings?',
+    title: 'Planets',
+    date: '11/22/2015',
+    description: 'There are 8 planets!',
+
   },
   {
     category: 'General',
     blogpost_id: 2,
-    title: 'Planets',
-    date: '11/22/2015',
-    description: 'How many planets are there?',
-
+    title: 'Daylight Savings',
+    date: '10/20/2021',
+    description: 'It occurs in order to save natural light, and was originallly due to saving power and fuel during WW1',
   },
   {
     category: 'Health and Lifestyle',
     blogpost_id: 3,
-    title: 'Keto Diet',
+    title: 'Fitness and Wellness',
     date: '10/20/2021',
-    description: 'Can any doctors explain the keto diet to me?',
+    description: 'Are you in a calorie deficit?',
   },
   {
     category: 'Advice',
     blogpost_id: 4,
-    title: 'Relationship Issues',
+    title: 'Relationships',
     date: '09/15/2021',
-    description: 'When should you expect to be exclusive with a partner?',
+    description: 'If they dismiss your feelings, and are very private!',
 
   },
   {
     category: 'General Question',
     blogpost_id: 5,
-    title: 'Daylight Savings',
+    title: 'Food Recalls',
     date: '10/20/2021',
-    description: 'Does anyone know the science behind daylight savings?',
+    description: 'Quaker Oats pancake mix has been recalled.',
   },
   {
-    category: 'Advice',
+    category: 'News',
     blogpost_id: 6,
-    title: 'Topic 2',
-    date: '07/21/2019',
-    description: 'Description for Topic 2',
+    title: 'Current Events',
+    date: '10/10/2023',
+    description: 'A former president was indicted!',
 
   },
 ]
