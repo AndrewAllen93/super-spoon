@@ -1,12 +1,10 @@
+{{blogPosts}}
 <section class="card">
-  <a href="/blogPost/{{name}}">
-    <header>{{category}}</header>
-  </a>
-</section>
+    <header class="card-header">{{category}}</header>
 
-<section class="card">
   <a href="/blogPost/{{id}}">
-    <header>{{name}}</header>
-      <img src="/images/{{blogpost.[0].filename}}" alt="{{blogpost.[0].description}}">
+    <header>{{title}}</header>
   </a>
+    <p>{{description}}</p>
+      {{!-- <img src="/images/{{blogpost.[0].filename}}" alt="{{blogpost.[0].description}}"> --}}
 </section>
