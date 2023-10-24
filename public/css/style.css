@@ -122,14 +122,14 @@ h3 {
 }
 
 .container {
-  background-color: #666666; /* Change the background color to match the header */
+  background-image: linear-gradient(to right,#d4d4d4,#383838);  /* Change the background color to match the header */
   padding: 30px;
   border: 1px solid #ccc;
   border-radius: 5px;
   margin: 20px auto;
   max-width: 1000px;
   text-align: center;
-  color: #fff; /* Text color */
+  color: #222222; /* Text color */
 }
 
 .blogPost-category {
@@ -163,13 +163,13 @@ h3 {
   justify-content: end;
   border: 7px double black;
   border-radius: 10px;
-  background-color: var(--light);
+  background-color: #e4e4e4;
   color: var(--dark);
 }
 
 .card-header {
   margin: 10px;
-  flex: 0 1 300px;
+
   border-radius: 20px;
 }
 
