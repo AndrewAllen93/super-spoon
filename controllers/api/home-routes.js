@@ -18,9 +18,11 @@ router.get("/", async (req, res) => {
     const blogPosts = blogPostData.map((blogPost) =>
       blogPost.get({ plain: true })
     );
-
+      console.log(blogPosts)
+      const randomBlog = blogPosts[Math.floor(Math.random() * blogPosts.length)];
+      console.log("RANDOM ELEMENT", randomBlog)
     res.render("homepage", {
-      blogPosts,
+      randomBlog,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
