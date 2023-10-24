@@ -132,6 +132,28 @@ h3 {
   color: #222222; /* Text color */
 }
 
+.container-post {
+  background-color: #e4e4e4;  /* Change the background color to match the header */
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 1000px;
+  text-align: center;
+  color: #222222; /* Text color */
+}
+
+.container-comment {
+  background-color: #e4e4e4;  /* Change the background color to match the header */
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px auto;
+  max-width: 1000px;
+  text-align: center;
+  color: #222222; /* Text color */
+}
+
 .blogPost-category {
   font-size: 24px;
   font-weight: bold;
@@ -217,6 +239,11 @@ main {
   flex-direction: column;
 }
 
+.create-form2 {
+  display: flex;
+  flex-direction: column;
+}
+
 .large-textarea {
   width: 100%;
   height: 200px; /* Adjust the height as needed */
@@ -226,4 +253,14 @@ main {
   font-size: 25px;
   display: flex;
   justify-content: flex-end;
+}
+
+.container-blog {
+  display: flex;
+  flex-direction: row;
+}
+
+.login-text {
+  display: flex;
+  justify-content: center;
 }

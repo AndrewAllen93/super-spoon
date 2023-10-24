@@ -55,13 +55,13 @@ router.get("/blogPost/:id", withAuth, async (req, res) => {
 });
 
 // GET one comment by ID
-router.get("/comment/:id", withAuth, async (req, res) => {
+router.get("/Comments", withAuth, async (req, res) => {
   try {
-    const dbCommentsData = await Comments.findByPk(req.params.id);
+    const dbCommentsData = await Comments.findAll();
 
     const Comment = dbCommentsData.get({ plain: true });
 
-    res.render("comment", { Comment, loggedIn: req.session.loggedIn });
+    res.render("comments", { Comments, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -85,6 +85,28 @@ router.post('/create-blog-post', withAuth, async (req, res) => {
 
     // Redirect to the page that displays the newly created blog post
     res.redirect(`/blogPost/${newBlogPost.id}`);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
+
+// Create a route to handle the form submission
+router.post('/create-comment', withAuth, async (req, res) => {
+  try {
+    // Get the data from the form
+    const { description } = req.body;
+
+    const Comment = dbCommentsData.get({ plain: true });
+
+    // Create a new comment in the database
+    const newComment = await Comments.create({
+      description,
+      // Include other properties as needed
+    });
+
+    // Redirect to the page that displays the newly created blog post
+    res.redirect(`/blogPost/`);
   } catch (err) {
     console.error(err);
     res.status(500).json(err);

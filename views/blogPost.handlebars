@@ -1,7 +1,26 @@
 {{#if loggedIn}}
-<section class="container">
-  <h3 class="blogPost-details">{{blogPosts.title}}</h3>
-  <h3>{{blogPosts.comments.[0].description}}</h3>
-  <h4>Reply Below: </h4>
-</section>
+<div class="container-blog">
+  <section class="container-post">
+    <div class="header-post">
+      <h3 class="blogPost-details">{{blogPosts.title}}</h3>
+      <h3>{{blogPosts.description}}</h3>
+    </div>
+  </section>
+  <div class="create-form2">
+      <h4>Reply Below: </h4>
+    <form action="/create-comment" method="POST">
+      {{!-- <input type="text" name="category" placeholder="Category" required> --}}
+      <textarea name="description" placeholder="Description" required class="large-textarea"></textarea>
+      <button type="submit">Leave Comment</button>
+    </form>
+  </div>
+</div>
+<div>
+  <h4>Comments:</h4>
+  <div>
+   {{#each blogPosts.comments as |Comment|}}
+    {{> comments-details}}
+    {{/each}}
+    </div>
+</div>
 {{/if}}
