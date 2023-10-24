@@ -10,18 +10,18 @@ router.get('/', async (req, res) => {
     const blogPostData = await blogPost.findAll({
       include: [
         {
-          model: Comments,
+          model: blogPost,
           attributes: ['id'],
         },
       ],
     });
 
-    const blogPosts = blogPostData.map((blogPost) =>
+    const blogPosts2 = blogPostData.map((blogPost) =>
       blogPost.get({ plain: true })
     );
 
     res.render('homepage', {
-      blogPosts,
+      blogPosts2,
       loggedIn: req.session.loggedIn,
     });  
   } catch (err) {
@@ -38,7 +38,7 @@ router.get('/blogPost/:id', withAuth, async (req, res) => {
     const blogPostData = await blogPost.findByPk(req.params.id, {
       include: [
         {
-          model: Comments,
+          model: blogPost,
           attributes: [
             'id',
             'title',
