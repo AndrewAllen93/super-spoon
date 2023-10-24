@@ -1,6 +1,7 @@
 {{#if loggedIn}}
 <section class="container">
-  <h3 class="blogPost-details">{{blogPost.title}}</h3>
-  <h4>Reply Below: {{comments}}</h4>
+  <h3 class="blogPost-details">{{blogPosts.title}}</h3>
+  <h3>{{blogPosts.comments.[0].description}}</h3>
+  <h4>Reply Below: </h4>
 </section>
 {{/if}}
