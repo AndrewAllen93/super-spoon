@@ -12,7 +12,7 @@ const commentsdata = [
     category: 'General',
     blogpost_id: 2,
     date: '10/20/2021',
-    description: 'It occurs in order to save natural light, and was originallly due to saving power and fuel during WW1',
+    description: 'It occurs in order to save natural light, and was originally due to saving power and fuel during WW1',
   },
   {
     category: 'Health and Lifestyle',
