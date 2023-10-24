@@ -21,23 +21,20 @@
         <button id="logout" class="btn-no-style">Logout</button>
       {{else}}
         <a href="/login">Login</a>
-        {{/if}}
+        {{/if}}                                
       {{#if loggedIn}}
-          <a href="/conversations.js">Conversations</a>
+          <a href="/">Conversations</a>
               {{/if}}
       </nav>
     </div>
-  </header>
   <main>
     <div class="blogPosts">
       {{{body}}}
     </div>
-  <main>
     <main>
       {{#if loggedIn}}
         <script src="/js/logout.js"></script>
       {{/if}}
-      </main>
   </body>
 
 </html>
